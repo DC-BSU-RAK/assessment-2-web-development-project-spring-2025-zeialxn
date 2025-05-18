@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Single Page Website</title>
+  <title>Beary Bites</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -85,6 +85,45 @@
               <option value="cash">Cash</option>
               <option value="bank-transfer">Bank Transfer</option>
             </select>
+
+            <!-- COUNTER ORDER -->
+            <div class="counter-row">
+              <div class="counter-box">
+                <div class="name">Assorted</div>
+                <div class="controls">
+                  <button class="button" onclick="decrease('counter1')">−</button>
+                  <span id="counter1" class="count">0</span>
+                  <button class="button" onclick="increase('counter1')">+</button>
+                </div>
+              </div>
+
+              <div class="counter-box">
+                <div class="name">Biscoff</div>
+                <div class="controls">
+                  <button class="button" onclick="decrease('counter2')">−</button>
+                  <span id="counter2" class="count">0</span>
+                  <button class="button" onclick="increase('counter2')">+</button>
+                </div>
+              </div>
+
+              <div class="counter-box">
+                <div class="name">Oreo</div>
+                <div class="controls">
+                  <button class="button" onclick="decrease('counter3')">−</button>
+                  <span id="counter3" class="count">0</span>
+                  <button class="button" onclick="increase('counter3')">+</button>
+                </div>
+              </div>
+
+              <div class="counter-box">
+                <div class="name">Mixed</div>
+                <div class="controls">
+                  <button class="button" onclick="decrease('counter4')">−</button>
+                  <span id="counter4" class="count">0</span>
+                  <button class="button" onclick="increase('counter4')">+</button>
+                </div>
+              </div>
+            </div>
 
             <!-- CHECKBOX FOR TERMS AND CONDITIONS -->
             <div class="agree">
