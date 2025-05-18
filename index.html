@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Single Page Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- BACKGROUND -->
+  <div class="bg-checkered"></div>
+  <!-- MAIN CONTENT -->
+  <div class="content">
+    <div id="main-content">
+      <!-- NAVIGATION BAR -->
+      <header class="navbar">
+        <div class="logo">
+          <img src="logo.PNG" alt="Logo" class="logo-img" />
+          <span class="logo-text">Beary Bites</span>
+        </div>
+        <nav class="nav-links">
+          <a onclick="showPage('home')">Home</a>
+          <a onclick="showPage('menu')">Menu</a>
+          <a onclick="showPage('order')">Order Form</a>
+          <a onclick="showPage('about')">About Us</a>
+          <a onclick="showPage('contact')">Contact Us</a>
+        </nav>
+      </header>
+
+      <!-- HOME PAGE -->
+      <main style="margin-top: 50px;">
+        <section id="home" class="page active">
+          <div class="home-content">
+            <img src="welcome transparent.png" alt="Welcome Image" class="home-image" />
+            <h2 class="welcome-text">Beary Bites is here! Serving up sweet, satisfying treats that will keep you coming
+              back for more.<br>
+              We're just getting started—stay tuned for what's next!
+            </h2>
+          </div>
+        </section>
+
+        <!-- MENU PAGE -->
+        <section id="menu" class="page">
+          <div class="menu-grid">
+            <div class="menu-box" onclick="openPopup('popup1')">
+              <img src="assorted cover.jpg" alt="Product 1" />
+              <p>Assorted<br>
+                Donuts</p>
+            </div>
+            <div class="menu-box" onclick="openPopup('popup2')">
+              <img src="biscoff.jpg" alt="Product 2" />
+              <p>Biscoff Overload</p>
+            </div>
+            <div class="menu-box" onclick="openPopup('popup3')">
+              <img src="oreo.jpg" alt="Product 3" />
+              <p>Oreo Overload</p>
+            </div>
+            <div class="menu-box" onclick="openPopup('popup4')">
+              <img src="mixed.jpg" alt="Product 4" />
+              <p>Mixed Overload</p>
+            </div>
+          </div>
+          <p class="menu-footer">More coming soon...</p>
+        </section>
+
+        <!-- ORDER FORM PAGE -->
+        <section id="order" class="page">
+          <div class="order-form">
+            <div class="group">
+              <h2>Order Form</h2>
+              <label>Name:</label>
+              <input type="text" id="name"><br>
+              <label>Phone:</label>
+              <input type="tel" id="phone"><br>
+              <label>Email:</label>
+              <input type="email" id="email"><br>
+              <label>Pickup, Meet-up Location, or Delivery Address:</label><input type="text"><br>
+            </div>
+
+            <!-- DROP DOWN LIST FOR PAYMENT METHOD -->
+            <label for="payment-method" id="payment">Payment Method:</label>
+            <select id="payment-method" name="payment-method">
+              <option value="cash">Cash</option>
+              <option value="bank-transfer">Bank Transfer</option>
+            </select>
+
+            <!-- CHECKBOX FOR TERMS AND CONDITIONS -->
+            <div class="agree">
+              <input type="checkbox" id="agree">
+              <label>I agree to the <span onclick="openPopup('termsPopup')" style="color:blue; cursor:pointer;">Terms
+                  and Conditions</span></label>
+            </div>
+            <button class="clear" onclick="clearForm()">Clear</button>
+            <button class="submit" onclick="submitForm()">Submit</button>
+
+          </div>
+        </section>
+
+        <!-- ABOUT US PAGE -->
+        <section id="about" class="page">
+          <h1 class="about-header">About Us</h1>
+          <div class="about-content">
+            <div class="about-text">
+              <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">Beary Bites is a
+                homemade mini donuts business founded<br>
+                by Thatiana, Irish, and Zhealene. What started as a shared<br>
+                passion turned into a small business dedicated to creating<br>
+                fress, high-quality mini donuts made from scratch. At Beary<br>
+                Bites, we focus on delivering delicious, bite-sized treats<br>
+                that are perfect for sharing, gifting, or simply treating yourself.</p>
+            </div>
+            <div class="about-image">
+              <img src="logo.PNG" alt="About Image" />
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTACT US PAGE -->
+        <section id="contact" class="page">
+          <h1 class="contact-header">Contact Us</h1>
+          <div class="contact-content">
+            <p>We'd love to hear from you! Reach out with any questions or feedback.</p>
+            <p><strong>Email:</strong> berrybites@gmail.com</p>
+            <p><strong>Instagram:</strong> @bearybites <strong>Phone:</strong> +971 50 733 4853</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- POP UPS FOR MENU-->
+    <div class="popup" id="popup1">
+      <button class="back-button" onclick="closePopup('popup1')">← Back</button>
+      <div class="popup-text">
+        <div class="popup-image-container">
+          <img src="assorted popup.jpg" alt="Product 1" class="popup-image">
+        </div>
+        <h3 class="popup-title">Assorted Donuts</h3>
+        <p><strong>Pieces:</strong> 9 pcs</p>
+        <p><strong>Flavors:</strong></p>
+        <ul class="popup-flavor-list">
+          <li>Biscoff Glaze w/ Oreo Toppings</li>
+          <li>Hazelnut Glaze</li>
+          <li>White Chocolate Glaze w/ Oreo and Biscoff Toppings</li>
+          <li>Chocolate Glaze w/ Sprinkles</li>
+          <li>White Chocolate Glaze w/ Heart Sprinkles</li>
+          <li>Chocolate Glaze w/ Marshmallows</li>
+          <li>White Chocolate Glaze w/ Oreo Toppings</li>
+          <li>Chocolate Glaze w/ Bsicoff Toppings</li>
+          <li>White Chocolate Glaze w/ Oreo Toppings and Strawberries</li>
+        </ul>
+        <div class="popup-price">14 AED</div>
+      </div>
+    </div>
+
+    <div class="popup" id="popup2">
+      <button class="back-button" onclick="closePopup('popup2')">← Back</button>
+      <div class="popup-content">
+        <div class="popup-image-container">
+          <img src="biscoff popup.jpg" alt="Product 2" class="popup-image">
+        </div>
+        <div class="popup-text">
+          <h3 class="popup-title">Biscoff Overload</h3>
+          <p><strong>Pieces:</strong> 8 pcs</p>
+          <p><strong>Flavors:</strong></p>
+          <ul class="popup-flavor-list">
+            <li>Biscoff Glaze w/ Biscoff Toppings</li>
+          </ul>
+          <div class="popup-price">12 AED</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" id="popup3">
+      <button class="back-button" onclick="closePopup('popup3')">← Back</button>
+      <div class="popup-content">
+        <div class="popup-image-container">
+          <img src="oreo popup.jpg" alt="Product 3" class="popup-image">
+        </div>
+        <div class="popup-text">
+          <h3 class="popup-title">Oreo Overload</h3>
+          <p><strong>Pieces:</strong> 8 pcs</p>
+          <p><strong>Flavors:</strong></p>
+          <ul class="popup-flavor-list">
+            <li>Chocolate Glaze w/ Oreo Toppings</li>
+          </ul>
+          <div class="popup-price">12 AED</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup" id="popup4">
+      <button class="back-button" onclick="closePopup('popup4')">← Back</button>
+      <div class="popup-content">
+        <div class="popup-image-container">
+          <img src="mixed.jpg" alt="Product 4" class="popup-image">
+        </div>
+        <div class="popup-text">
+          <h3 class="popup-title">Mixed Overload</h3>
+          <p><strong>Pieces:</strong> 8 pcs</p>
+          <p><strong>Flavors:</strong></p>
+          <ul class="popup-flavor-list">
+            <li>Biscoff Glaze w/ Biscoff Toppings</li>
+            <li>Chocolate Glaze w/ Oreo Toppings</li>
+          </ul>
+          <div class="popup-price">13 AED</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- POP UP FOR TERMS AND CONDITIONS -->
+    <div class="popup" id="termsPopup">
+      <button class="back-button" onclick="closePopup('termsPopup')">← Back</button>
+      <h3>Terms and Conditions</h3>
+      <p>Please read our terms carefully before placing an order.</p>
+      <ul>
+        <br>
+        <p>General</p>
+        <li>By interacting with our page, you agree to these terms and conditions.</li>
+        <li>We reserve the right to update these terms at any time.</li>
+        <br>
+        <p>Orders & Payments</p>
+        <li>Orders must be placed at least one day in advance.</li>
+        <li>Accepted payment methods: Cash and Bank Transfer.</li>
+        <br>
+        <p>Cancellations & Refunds</p>
+        <li>No cancellations or refunds once an order is confirmed.</li>
+        <li>If there is an issue with your order. Please contact us within 24 hours for assistance.</li>
+        <br>
+        <p>Allergies & Ingredients</p>
+        <li>Our donuts may contain dairy, gluten, and nuts. We are not liable for any allergic reactions.</li>
+        <br>
+        <p>Custom Orders</p>
+        <li>Customization requests must be made at least one day in advance.</li>
+        <li>Additional charges may apply for special requests.</li>
+      </ul>
+      <button class="accept" onclick="acceptTerms()">Accept</button>
+    </div>
+
+    <!-- POP UP FOR THANK YOU MESSAGE -->
+    <div class="popup" id="thankyou">
+      <h3>Your order is placed. Thank you!</h3>
+      <button onclick="closeThankYou()">Okay</button>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+  </div>
+</body>
+
+</html>
