@@ -45,3 +45,18 @@ function closeThankYou() { //to close the pop up remove the blur and clear the f
   clearForm();
 }
 
+function increase(id) { // order counter
+  const counter = document.getElementById(id); //finds element w the given id and store it in the counter
+  let value = parseInt(counter.textContent); //returns the text in the element and converts it into an integer which is stored in the value
+  value++; //increase by 1
+  counter.textContent = value; //updates the value
+}
+
+function decrease(id) { //similar to increase id except this is decrease
+  const counter = document.getElementById(id);
+  let value = parseInt(counter.textContent);
+  if (value > 0) {
+    value--;
+    counter.textContent = value;
+  }
+}
